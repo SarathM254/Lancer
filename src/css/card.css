@@ -1,0 +1,30 @@
+.cards {
+  display: grid;
+  gap: 15px;
+  padding: 10px;
+}
+
+/* Small screens (default) */
+.cards {
+  grid-template-columns: 1fr; 
+}
+
+/* Medium screens */
+@media (min-width: 600px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Large screens */
+@media (min-width: 1024px) {
+  .cards {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.card {
+  background: #eee;
+  padding: 20px;
+  border-radius: 10px;
+}
