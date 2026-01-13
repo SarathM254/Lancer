@@ -12,7 +12,7 @@ function App() {
         <Sidebar />
         <div class="rest flex-1 flex flex-col h-full">
           <Header></Header>
-          <div className="content flex-1 flex flex-col p-10 overflow-auto">
+          <div className="content flex-1 flex flex-col p-10 overflow-auto no-scrollbar">
             <Cards />
             <div className='text-2xl font-bold text-white mt-10'>
               Recent Mails
