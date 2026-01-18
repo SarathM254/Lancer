@@ -4,7 +4,7 @@ import logo from '../assets/Leo.png'
 const Messages = () => {
     return (
         <div>
-        <div className='text-2xl font-bold text-white mt-10'>
+        <div className='text-2xl font-bold text-white mt-6'>
               Mails
         </div>
         <div className='m-6'>

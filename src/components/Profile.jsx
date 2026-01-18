@@ -8,7 +8,7 @@ import Messages from './Messages.jsx'
 const Profile = () => {
     return (
         <div>
-            <div class="Profile-content flex-1 flex p-4 space-x-4">
+            <div class="Profile-content flex-1 flex space-x-9">
                 <div class="flex-[4] basis-0 flex flex-col gap-4 justify-center">
 
                     <Basic></Basic>
@@ -19,8 +19,6 @@ const Profile = () => {
 
                 </div>
                 <Flow></Flow>
-
-
             </div>
             <Messages></Messages>
         </div>

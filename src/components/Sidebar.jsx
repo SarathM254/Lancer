@@ -5,8 +5,8 @@ const Sidebar = () => {
   return (
     <div>
       <div className="sidebar text-[rgb(251,251,254)] h-full w-59 flex flex-col">
-            <div className="flex h-24 bg-[rgba(128,128,128,0.25)] items-center justify-center text-2xl font-bold z-10 shadow-[0_10px_10px_-5px_rgba(0,0,0,0.15)]">
-                Hero-logo
+            <div className="flex h-24 bg-[rgba(128,128,128,0.25)] items-center justify-center text-2xl font-bold z-10 shadow-[0_10px_10px_-5px_rgba(0,0,0,0.15)] text-[rgb(125,60,239)]">
+                Lancer
             </div>
             <div className='profiles flex-1 pt-9 bg-[rgba(128,128,128,0.25)] overflow-auto no-scrollbar'>
                 <div className="relative pr-1">
