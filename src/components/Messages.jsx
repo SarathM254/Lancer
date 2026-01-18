@@ -4,6 +4,10 @@ import logo from '../assets/Leo.png'
 const Messages = () => {
     return (
         <div>
+        <div className='text-2xl font-bold text-white mt-10'>
+              Mails
+        </div>
+        <div className='m-6'>
             <ul className='text-white bg-[rgba(128,128,128,0.25)] p-5 rounded-2xl space-y-3 mt-5'>
                 <li className='h-[65px] flex items-center justify-between'>
                     <img src={logo} className="h-full w-[65px] rounded-full object-cover mr-1.5" alt="" />
@@ -35,6 +39,7 @@ const Messages = () => {
                 
             </ul>
         </div>
+    </div>
     )
 }
 

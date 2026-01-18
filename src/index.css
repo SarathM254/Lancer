@@ -15,6 +15,18 @@
     scrollbar-width: none;  /* Firefox */
   }
 }
+.state-card{
+    @apply flex-1 border rounded-[5px] p-3 bg-[#8080803F];
+}
+
+.flow-light{
+    @apply bg-[rgb(125,60,239)];
+}
+
+
+*{
+  color: white;
+}
 
 
 
