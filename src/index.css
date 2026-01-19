@@ -24,7 +24,7 @@ body{
 }
 
 .flow-light{
-    @apply bg-[rgb(125,60,239)];
+    @apply bg-[#7d3cef];
 }
 
 
