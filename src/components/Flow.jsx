@@ -4,7 +4,7 @@ import { progressData } from '../assets/Progress.js'
 
 const Flow = () => {
     return (
-        <div class="flex-[3] basis-0 flex flex-col justify-center items-center gap-4 pt-9 pb-9 relative">
+        <div className="flex-[3] basis-0 flex flex-col justify-center items-center gap-4 pt-9 pb-9 relative">
             
             {progressData.map((item,index) => (
                 <Stage
@@ -13,7 +13,7 @@ const Flow = () => {
                     Description={item.description}
                 />
             ))}
-            <div class="absolute flow-light left-4 top-24 bottom-24 w-2"></div>
+            <div className="absolute flow-light left-4 top-24 bottom-24 w-2"></div>
 
         </div>
     )
