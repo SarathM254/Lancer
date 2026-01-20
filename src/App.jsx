@@ -8,9 +8,14 @@ import { useState, useEffect } from 'react'
 
 
 
+
 function App() {
-  const [clients, setClients] = useState([])
-useEffect(() => {
+
+  const [clients, setClients] = useState([]);
+  const [activeClient, setActiveClient] = useState(null);
+
+
+  useEffect(() => {
     fetch("http://localhost:3000/")
       .then(res => res.json())
       .then(data => setClients(data));
@@ -19,11 +24,20 @@ useEffect(() => {
   return (
     <>
       <div className="View flex h-screen overflow-hidden bg-black">
-        <Sidebar clients={clients} />
+        <Sidebar clients={clients} activeClient={activeClient} setActiveClient={setActiveClient} />
         <div className="rest flex-1 flex flex-col h-full">
           <Header></Header>
           <div className="content flex-1 flex flex-col p-6 overflow-auto no-scrollbar">
-            <Profile></Profile>            
+
+            {activeClient === null ?
+              <>
+              <Cards />
+              <div className='text-2xl font-bold text-white mt-10'>
+                Recent Mails
+              </div>
+              <Messages />
+              </> : <Profile clients={clients} activeClient={activeClient}></Profile>
+            }
           </div>
         </div>
       </div>

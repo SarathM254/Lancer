@@ -20,4 +20,4 @@ const ClientSchema = new mongoose.Schema({
 
 export const Client = mongoose.model('Client', ClientSchema); // collection name will be clients in the database (automatically pluralized)
 
-//Database name will be specified by the connection string in server.js
+//Database name will be specified by the connection string in server.jsmodels/Clients.js

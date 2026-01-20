@@ -1,10 +1,11 @@
 import React from 'react'
 
-const Basic = () => {
+const Basic = (props) => {
+    let person=props.current;
     return (
         <div>
             <div className="hero flex flex-col border-2 rounded-[5px] pl-2 gap-2 py-3 mb-2.5">
-                <div className="text-2xl">Motupalli Sarath</div>
+                <div className="text-2xl">{person.name}</div>
                 <div className="flex justify-center items-end space-x-2">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-7">
                         <path fill-rule="evenodd"
@@ -13,7 +14,7 @@ const Basic = () => {
                     </svg>
 
                     <a className="text-2xl flex-1"
-                        href="https://mail.google.com/mail/?view=cm&fs=1&to=motupallisarathchandra123@gmail.com">motupallisarathchandra123@gmail.com</a>
+                        href={`https://mail.google.com/mail/?view=cm&fs=1&to=${person.links.email}`}>{person.links.email}</a>
                 </div>
                 <div className="flex justify-center items-end space-x-2">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
@@ -24,7 +25,7 @@ const Basic = () => {
                     </svg>
 
                     <a className="text-2xl flex-1"
-                        href="https://linkedin.com/in/motupalli-sarath-8bb6422a0">www.linkedin.com/in/motupalli-sarath-8bb6422a0</a>
+                        href={`${person.links.linkedin}`}>{person.links.linkedin}</a>
                 </div>
             </div>
         </div>
