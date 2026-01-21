@@ -24,7 +24,7 @@ const Sidebar = (props) => {
                     <div id={index} className={`relative ${activeClient === client.name ? "pr-1" : ''}`} onClick={()=> handleclick(client.name)}>
                     {activeClient === client.name && <div className='bg-white h-full w-0.5 absolute left-0 border rounded-r-xl'></div>}
                     <div className={`flex items-center justify-center ${activeClient === client.name ? 'bg-[rgba(255,255,255,0.1)] rounded-2xl' : ''} px-4 py-3 space-x-4 hover:bg-[rgba(255,255,255,0.1)] cursor-pointer`}>
-                        <img src={logo} className="h-10 w-10 rounded-full object-cover " alt="" />
+                        <img src={client.profileUrl} className="h-10 w-10 rounded-full object-cover " alt="" />
                         <span className="flex-1 truncate ">{client.name}</span>
                     </div>
                 </div>
