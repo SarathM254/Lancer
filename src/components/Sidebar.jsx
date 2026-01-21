@@ -7,10 +7,12 @@ const Sidebar = (props) => {
     let setActiveClient = props.setActiveClient;
 
     let clients = props.clients;
-
+    let contentRef=props.ref;
     
     const handleclick = (name) => {
         setActiveClient(name);
+        contentRef.current.scrollTo({ top: 0, behavior: 'smooth' });
+        
     }
 
   return (

@@ -4,7 +4,7 @@ import Header from './components/Header.jsx'
 import Cards from './components/Cards.jsx'
 import Messages from './components/Messages.jsx'
 import Profile from './components/Profile.jsx'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 
 
@@ -13,6 +13,8 @@ function App() {
 
   const [clients, setClients] = useState([]);
   const [activeClient, setActiveClient] = useState(null);
+  const contentRef = useRef(null);
+
 
 
   useEffect(() => {
@@ -24,10 +26,10 @@ function App() {
   return (
     <>
       <div className="View flex h-screen overflow-hidden bg-black">
-        <Sidebar clients={clients} activeClient={activeClient} setActiveClient={setActiveClient} />
+        <Sidebar ref={contentRef} clients={clients} activeClient={activeClient} setActiveClient={setActiveClient} />
         <div className="rest flex-1 flex flex-col h-full">
           <Header></Header>
-          <div className="content flex-1 flex flex-col p-6 overflow-auto no-scrollbar">
+          <div className="content flex-1 flex flex-col p-6 overflow-auto no-scrollbar" ref={contentRef}>
 
             {activeClient === null ?
               <>
