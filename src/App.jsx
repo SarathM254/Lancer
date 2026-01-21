@@ -29,7 +29,7 @@ function App() {
         <Sidebar ref={contentRef} clients={clients} activeClient={activeClient} setActiveClient={setActiveClient} />
         <div className="rest flex-1 flex flex-col h-full">
           <Header></Header>
-          <div className="content flex-1 flex flex-col p-6 overflow-auto no-scrollbar" ref={contentRef}>
+          <div className="content flex-1 flex flex-col p-10 overflow-auto no-scrollbar" ref={contentRef}>
 
             {activeClient === null ?
               <>

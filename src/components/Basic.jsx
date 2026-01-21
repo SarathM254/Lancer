@@ -1,31 +1,55 @@
-import React from 'react'
+import React from 'react';
 
 const Basic = (props) => {
-    let person=props.current;
+    // Destructuring for cleaner access and fallback to prevent crashes if data is missing
+    const person = props.current || {};
+    const { name, links } = person;
+
     return (
-        <div>
-            <div className="hero flex flex-col border-2 rounded-[5px] pl-2 gap-2 py-3 mb-2.5">
-                <div className="text-2xl">{person.name}</div>
-                <div className="flex justify-center items-end space-x-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-7">
-                        <path fill-rule="evenodd"
-                            d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm8.706-1.442c1.146-.573 2.437.463 2.126 1.706l-.709 2.836.042-.02a.75.75 0 0 1 .67 1.34l-.04.022c-1.147.573-2.438-.463-2.127-1.706l.71-2.836-.042.02a.75.75 0 1 1-.671-1.34l.041-.022ZM12 9a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z"
-                            clip-rule="evenodd" />
-                    </svg>
-
-                    <a className="text-2xl flex-1"
-                        href={`https://mail.google.com/mail/?view=cm&fs=1&to=${person.links.email}`}>{person.links.email}</a>
+        <div className="w-88">
+            {/* Main Card Container */}
+            <div className="bg-black text-white rounded-lg p-6 flex items-center justify-between ">
+                
+                {/* Left Side: Name */}
+                <div className="text-4xl font-bold tracking-tight tracking-wide font-medium ">
+                    {name}
                 </div>
-                <div className="flex justify-center items-end space-x-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                        className="size-6">
-                        <path fill-rule="evenodd"
-                            d="M19.902 4.098a3.75 3.75 0 0 0-5.304 0l-4.5 4.5a3.75 3.75 0 0 0 1.035 6.037.75.75 0 0 1-.646 1.353 5.25 5.25 0 0 1-1.449-8.45l4.5-4.5a5.25 5.25 0 1 1 7.424 7.424l-1.757 1.757a.75.75 0 1 1-1.06-1.06l1.757-1.757a3.75 3.75 0 0 0 0-5.304Zm-7.389 4.267a.75.75 0 0 1 1-.353 5.25 5.25 0 0 1 1.449 8.45l-4.5 4.5a5.25 5.25 0 1 1-7.424-7.424l1.757-1.757a.75.75 0 1 1 1.06 1.06l-1.757 1.757a3.75 3.75 0 1 0 5.304 5.304l4.5-4.5a3.75 3.75 0 0 0-1.035-6.037.75.75 0 0 1-.354-1Z"
-                            clip-rule="evenodd" />
-                    </svg>
 
-                    <a className="text-2xl flex-1"
-                        href={`${person.links.linkedin}`}>{person.links.linkedin}</a>
+                {/* Right Side: Divider and Icons */}
+                <div className="flex items-center gap-5">
+                    
+                    {/* Vertical Divider Line */}
+                    <div className="h-12 w-[2px] bg-gray-600 rounded-full"></div>
+
+                    {/* Icons Container (Stacked Vertically) */}
+                    <div className="flex flex-col justify-center gap-3">
+                        
+                        {/* Email Link */}
+                        <a 
+                            href={`https://mail.google.com/mail/?view=cm&fs=1&to=${links?.email}`} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="text-[rgb(50,233,236)] hover:text-[rgb(175,155,246)] transition-colors duration-200"
+                            title="Send Email"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+                            </svg>
+                        </a>
+
+                        {/* LinkedIn Link */}
+                        <a 
+                            href={links?.linkedin} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="text-[rgb(50,233,236)] hover:text-[rgb(175,155,246)] transition-colors duration-200"
+                            title="LinkedIn Profile"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
+                                <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3v9zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.75 1.75 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.22-.44-1.65-1.15-1.65-.9 0-1.55.67-1.55 1.75V19h-3v-9h3v1.2c.57-.76 1.4-1.2 2.5-1.2 2.65 0 3.2 1.8 3.2 4.15V19z" />
+                            </svg>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

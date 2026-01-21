@@ -9,7 +9,7 @@ const Stage = (props) => {
                 </div>
             </div>
             <div className="state-card flex flex-col">
-                <div className="font-bold text-2xl">{props.Heading}</div>
+                
                 <div>{props.Description}</div>
             </div>
         </div>
