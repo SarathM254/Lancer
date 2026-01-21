@@ -16,8 +16,8 @@ const Profile = (props) => {
     });
     return (
         <div>
-            <div className="Profile-content flex-1 flex flex-col space-x-32 xl:flex-row">
-                <div className="flex-[4] basis-0 flex flex-col gap-4 justify-center">
+            <div className="Profile-content flex-1 flex flex-col space-x-32 md:flex-row">
+                <div className="flex-[4] basis-0 flex flex-col gap-4">
 
                     <Basic current={current}/>
 
