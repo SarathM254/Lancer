@@ -13,8 +13,8 @@ const Flow = () => {
                     Description={item.description}
                 />
             ))}
-            <div className="absolute flow-light left-4 top-10 bottom-10 w-2 rounded-2xl"></div>
-
+            <div className="absolute flow-light left-4 top-10 bottom-[82%] w-2 z-5 rounded-2xl"></div>
+            <div className="absolute bg-[#585858] left-4 top-10 bottom-10 w-2 z-0 rounded-2xl"></div>
         </div>
     )
 }
