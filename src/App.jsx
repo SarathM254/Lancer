@@ -14,7 +14,7 @@ function App() {
   const [clients, setClients] = useState([]);
   const [activeClient, setActiveClient] = useState(null);
   const contentRef = useRef(null);
-
+  const [anim,setanim] =useState(0);
 
 
   useEffect(() => {
@@ -26,7 +26,7 @@ function App() {
   return (
     <>
       <main className="View flex h-screen overflow-hidden bg-black">
-        <Sidebar ref={contentRef} clients={clients} activeClient={activeClient} setActiveClient={setActiveClient} />
+        <Sidebar anim={anim} setanim={setanim} ref={contentRef} clients={clients} activeClient={activeClient} setActiveClient={setActiveClient} />
         <div className="rest flex-1 flex flex-col h-full">
           <Header></Header>
           <div className="content flex-1 flex flex-col p-10 pt-5 overflow-auto no-scrollbar" ref={contentRef}>
@@ -38,7 +38,7 @@ function App() {
                 Recent Mails
               </div>
               <Messages />
-              </> : <Profile clients={clients} activeClient={activeClient}></Profile>
+              </> : <Profile anim={anim} clients={clients} activeClient={activeClient}></Profile>
             }
           </div>
         </div>

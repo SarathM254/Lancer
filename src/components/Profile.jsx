@@ -5,7 +5,9 @@ import Plan from './Plan.jsx'
 import Flow from './Flow.jsx'
 import Messages from './Messages.jsx'
 
+
 const Profile = (props) => {
+    
     let clients=props.clients;
     let activeClient=props.activeClient;
     let current;
@@ -19,14 +21,14 @@ const Profile = (props) => {
             <div className="Profile-content flex-1 flex flex-col space-x-32 md:flex-row">
                 <div className="flex-[4] basis-0 flex flex-col gap-4">
 
-                    <Basic current={current}/>
+                    <Basic anim={props.anim} current={current}/>
 
-                    <Details current={current}/>
+                    <Details anim={props.anim} current={current}/>
                         
-                    <Plan current={current}/>
+                    <Plan anim={props.anim} current={current}/>
 
                 </div>
-                <Flow/>
+                <Flow anim={props.anim} />
             </div>
             <Messages></Messages>
         </div>

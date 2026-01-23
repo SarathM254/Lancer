@@ -44,7 +44,7 @@ const Stage = (props) => {
                 }
 
             </div>
-            <div className="state-card flex flex-col leading-5">
+            <div className={`text-xl font-semibold ${(props.number <= maxstage) ? 'text-[rgb(215,215,215)]' : 'text-[#4bb4b5]'}`}>
                 {props.Description}
             </div>
         </div>
