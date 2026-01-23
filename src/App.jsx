@@ -25,7 +25,7 @@ function App() {
 
   return (
     <>
-      <div className="View flex h-screen overflow-hidden bg-black">
+      <main className="View flex h-screen overflow-hidden bg-black">
         <Sidebar ref={contentRef} clients={clients} activeClient={activeClient} setActiveClient={setActiveClient} />
         <div className="rest flex-1 flex flex-col h-full">
           <Header></Header>
@@ -42,7 +42,7 @@ function App() {
             }
           </div>
         </div>
-      </div>
+      </main>
     </>
   )
 }
