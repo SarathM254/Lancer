@@ -18,7 +18,7 @@ const Profile = (props) => {
     });
     return (
         <div>
-            <div className="Profile-content flex-1 flex flex-col space-x-32 md:flex-row">
+            <div className="Profile-content flex-1 flex flex-col space-x-24 xl:flex-row">
                 <div className="flex-[4] basis-0 flex flex-col gap-4">
 
                     <Basic anim={props.anim} current={current}/>

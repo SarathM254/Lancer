@@ -1,26 +1,20 @@
 export const progressData = [
   {
-    stage: "Inquiry & Discovery",
-    description: "Client consultation & needs assessment."
+    description: "Client consultation"
   },
   {
-    stage: "Scope & Proposal",
-    description: "Tech stack definition & quote."
+    description: "Tech stack & quote."
   },
   {
-    stage: "Planning & Setup",
     description: "Environment setup & access."
   },
   {
-    stage: "Execution / Build",
-    description: "Scripting & workflow implementation."
+    description: "workflow implementation."
   },
   {
-    stage: "Review & Revisions",
-    description: "QA testing & feedback integration."
+    description: "Feedback integration."
   },
   {
-    stage: "Final Delivery & Close",
     description: "Handover & documentation."
   }
 ];
