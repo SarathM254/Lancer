@@ -30,7 +30,7 @@ const Profile = (props) => {
                 </div>
                 <Flow anim={props.anim} />
             </div>
-            <Messages></Messages>
+            <Messages profile={true}></Messages>
         </div>
     )
 }
