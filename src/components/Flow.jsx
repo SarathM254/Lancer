@@ -5,9 +5,9 @@ import { useState } from 'react'
 
 const Flow = (props) => {
     const [percent, setpercent] = useState(82)
-    const [maxstage,setmaxstage] =useState(0);
+    const [maxstage,setmaxstage] =useState(0);  {/*animate-pulse [animation-iteration-count:1] */}
     return (
-        <div key={props.anim} className="flex-[3] basis-0 flex flex-col justify-center items-center gap-10 pt-9 pb-9 relative mr-8 animate-pulse [animation-iteration-count:1]">
+        <div key={props.anim} className="flex-[3] basis-0 flex flex-col justify-center items-center gap-10 pt-9 pb-9 relative mr-8 ">
 
             {progressData.map((item, index) => (
                 <Stage

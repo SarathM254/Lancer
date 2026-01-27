@@ -6,7 +6,7 @@ const Basic = (props) => {
     const { name, links } = person;
 
     return (
-        <div key={props.anim} className="w-full animate-pulse [animation-iteration-count:1]">
+        <div key={props.anim} className="w-100 ">
             {/* Main Card Container */}
             <div className="bg-black text-white rounded-lg p-6 flex items-center justify-between ">
 
