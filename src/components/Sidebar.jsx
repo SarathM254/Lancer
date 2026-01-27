@@ -42,7 +42,7 @@ const Sidebar = (props) => {
                             {/*selected effect*/}
                             {activeClient === client.name && <div className='bg-[rgb(50,233,236)] h-full w-0.5 absolute left-0 rounded-r-xl'></div>}
                             <div className={`flex items-center justify-baseline ${activeClient === client.name ? 'bg-[rgba(255,255,255,0.1)] rounded-2xl' : ''} px-4 py-3 space-x-4 hover:bg-[rgba(255,255,255,0.1)] cursor-pointer`}>
-                                <img src={client.profileUrl} className="h-10 w-10 rounded-full object-cover " alt="" />
+                                <img src={client.links.profileUrl} className="h-10 w-10 rounded-full object-cover " alt="" />
                                 {!isKicked && <span style={{ opacity: `${isKicked ? '0' : '1'}` }} className="flex-1 truncate ">{client.name}</span>}
                             </div>
                         </div>
