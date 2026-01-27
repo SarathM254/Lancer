@@ -18,7 +18,7 @@ function App() {
 
 
   useEffect(() => {
-    fetch("http://localhost:3000/")
+    fetch("/api/server")
       .then(res => res.json())
       .then(data => setClients(data));
   }, []);
