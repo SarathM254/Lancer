@@ -28,9 +28,9 @@ const Sidebar = (props) => {
 
     return ( 
         <div>
-            <div className="sidebar text-[rgb(251,251,254)] h-full w-59 flex flex-col transition-all duration-300"
+            <div className="sidebar text-[rgb(251,251,254)] h-full w-59 flex flex-col z-50 transition-all duration-300 ease-in-out bg-black fixed md:relative"
                 style={{width: `${isKicked ? '80px': '236px'}` }}>
-                <div className="flex h-24 bg-[rgba(128,128,128,0.25)] items-center justify-center space-x-4 px-4 shadow-[0_10px_10px_-5px_rgba(0,0,0,0.15)] hover:cursor-pointer">
+                <div className="flex h-24 bg-[rgba(128,128,128,0.25)] items-center justify-baseline space-x-4 px-4 shadow-[0_10px_10px_-5px_rgba(0,0,0,0.15)] hover:cursor-pointer">
                     <div onClick={() => handlekick(isKicked)} className='transition-colors duration-100 hover:bg-[rgba(114,114,114,0.33)] p-2.5 rounded-full'>
                         <Panel></Panel>
                     </div>
@@ -41,7 +41,7 @@ const Sidebar = (props) => {
                         <div key={index} id={index} className={`relative ${activeClient === client.name ? "pr-1" : ''}`} onClick={() => handleclick(client.name)}>
                             {/*selected effect*/}
                             {activeClient === client.name && <div className='bg-white h-full w-0.5 absolute left-0 border rounded-r-xl'></div>}
-                            <div className={`flex items-center justify-center ${activeClient === client.name ? 'bg-[rgba(255,255,255,0.1)] rounded-2xl' : ''} px-4 py-3 space-x-4 hover:bg-[rgba(255,255,255,0.1)] cursor-pointer`}>
+                            <div className={`flex items-center justify-baseline ${activeClient === client.name ? 'bg-[rgba(255,255,255,0.1)] rounded-2xl' : ''} px-4 py-3 space-x-4 hover:bg-[rgba(255,255,255,0.1)] cursor-pointer`}>
                                 <img src={client.profileUrl} className="h-10 w-10 rounded-full object-cover " alt="" />
                                 {!isKicked && <span style={{ opacity: `${isKicked ? '0' : '1'}` }} className="flex-1 truncate ">{client.name}</span>}
                             </div>

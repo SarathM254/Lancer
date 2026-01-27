@@ -27,7 +27,7 @@ function App() {
     <>
       <main className="View flex h-screen overflow-hidden bg-black">
         <Sidebar anim={anim} setanim={setanim} ref={contentRef} clients={clients} activeClient={activeClient} setActiveClient={setActiveClient} />
-        <div className="rest flex-1 flex flex-col h-full">
+        <div className="rest flex-1 flex flex-col h-full pl-20 md:pl-0">
           <Header></Header>
           <div className="content flex-1 flex flex-col p-10 pt-5 overflow-auto no-scrollbar" ref={contentRef}>
 
