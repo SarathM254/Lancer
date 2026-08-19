@@ -1,7 +1,7 @@
 import React from 'react'
 import '../css/card.css'
 import Card from './Card.jsx'
-const Cards = () => {
+const Cards = ({ isLoading }) => {
   return (
     <div>
       <div className="Heading font-bold text-white text-4xl mb-1.5">Dashboard</div>
@@ -10,10 +10,10 @@ const Cards = () => {
       <div
         className="cards grid  grid-cols-4 p-4 rounded-3xl ">
 
-        <Card></Card>
-        <Card></Card>
-        <Card></Card>
-        <Card></Card>
+        <Card isLoading={isLoading}></Card>
+        <Card isLoading={isLoading}></Card>
+        <Card isLoading={isLoading}></Card>
+        <Card isLoading={isLoading}></Card>
       </div>
     </div>
   )

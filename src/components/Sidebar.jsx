@@ -37,18 +37,25 @@ const Sidebar = (props) => {
                     {!isKicked && <div onClick={() => handleclick(null)} className='text-2xl font-bold text-[rgba(50,233,236)] flex-1'>Lancer</div>}
                 </div>
                 <div className='profiles flex-1 pt-6 pb-4 bg-[rgba(128,128,128,0.25)] overflow-auto no-scrollbar'>
-                    {clients.map((client, index) => (
-                        <div key={index} id={index} className={`relative ${activeClient === client.name ? "pr-1" : ''}`} onClick={() => handleclick(client.name)}>
-                            {/*selected effect*/}
-                            {activeClient === client.name && <div className='bg-[rgb(50,233,236)] h-full w-0.5 absolute left-0 rounded-r-xl'></div>}
-                            <div className={`flex items-center justify-baseline ${activeClient === client.name ? 'bg-[rgba(255,255,255,0.1)] rounded-2xl' : ''} px-4 py-3 space-x-4 hover:bg-[rgba(255,255,255,0.1)] cursor-pointer`}>
-                                <img src={client.links.profileUrl} className="h-10 w-10 rounded-full object-cover " alt="" />
-                                {!isKicked && <span style={{ opacity: `${isKicked ? '0' : '1'}` }} className="flex-1 truncate ">{client.name}</span>}
+                    {props.isLoading ? (
+                        [...Array(6)].map((_, index) => (
+                            <div key={index} className="flex items-center px-4 py-3 space-x-4 animate-pulse">
+                                <div className="h-10 w-10 bg-gray-600 rounded-full shrink-0"></div>
+                                {!isKicked && <div className="flex-1 h-4 bg-gray-600 rounded"></div>}
                             </div>
-                        </div>
-                    ))}
-
-
+                        ))
+                    ) : (
+                        clients.map((client, index) => (
+                            <div key={index} id={index} className={`relative ${activeClient === client.name ? "pr-1" : ''}`} onClick={() => handleclick(client.name)}>
+                                {/*selected effect*/}
+                                {activeClient === client.name && <div className='bg-[rgb(50,233,236)] h-full w-0.5 absolute left-0 rounded-r-xl'></div>}
+                                <div className={`flex items-center justify-baseline ${activeClient === client.name ? 'bg-[rgba(255,255,255,0.1)] rounded-2xl' : ''} px-4 py-3 space-x-4 hover:bg-[rgba(255,255,255,0.1)] cursor-pointer`}>
+                                    <img src={client.links.profileUrl} className="h-10 w-10 rounded-full object-cover " alt="" />
+                                    {!isKicked && <span style={{ opacity: `${isKicked ? '0' : '1'}` }} className="flex-1 truncate ">{client.name}</span>}
+                                </div>
+                            </div>
+                        ))
+                    )}
                 </div>
             </div>
         </div>
